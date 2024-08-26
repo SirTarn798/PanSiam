@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 export function middleware(request) {
   // return NextResponse.redirect(new URL("/", request.url))
   const res = NextResponse.next();
-  let expires = new Date(Date.now() + 10 * 60480000);
+  let expires = new Date(Date.now() + 10 * 1000);
   const session = request.cookies.get("session")?.value;
   if (!session) {
     console.log("no session")
