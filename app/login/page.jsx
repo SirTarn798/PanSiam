@@ -8,7 +8,7 @@ export default function Register() {
 
   const register = async (e) => {
     e.preventDefault();
-    const response = await fetch("/api/register", {
+    const response = await fetch("/api/login", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -30,7 +30,7 @@ export default function Register() {
         ></input>
         <input
           placeholder="password at least 8 charactors"
-          // type="password"
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
