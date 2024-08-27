@@ -31,8 +31,3 @@ body {
     text-wrap: balance;
   }
 }
-
-.loginContainer {
-  display: flex;
-  gap: 20px;
-}
