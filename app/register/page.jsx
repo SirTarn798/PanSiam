@@ -8,6 +8,7 @@ export default function Register() {
 
   const register = async (e) => {
     e.preventDefault();
+    console.log("ddx")
     const response = await fetch("/api/register", {
       method: "POST",
       headers: {
@@ -34,7 +35,7 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit" className="text-white" disabled={password.length < 8 ? true : false}>Register</button>
+        <button type="submit" className="text-white">Register</button>
       </form>
     </div>
   );

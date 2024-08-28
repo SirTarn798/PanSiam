@@ -4,6 +4,7 @@ import { encodeBase64 } from "bcryptjs";
 export const POST = async (request) => {
   const body = await request.json();
   const hashedPassword = encodeBase64(body.password,8);
+  console.log(body);
   try {
     await prisma.user.create({
       data: {

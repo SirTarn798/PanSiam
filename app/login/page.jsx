@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function Register() {
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -34,7 +34,7 @@ export default function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         ></input>
-        <button type="submit" className="text-white" disabled={password.length < 8 ? true : false}>Register</button>
+        <button type="submit" className="text-white" disabled={password.length < 8 ? true : false}>Login</button>
       </form>
     </div>
   );
