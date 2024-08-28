@@ -17,6 +17,7 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL("/login", request.url));
     }
   }
+  
 
   // return NextResponse.redirect(new URL("/", request.url))
   //   const res = NextResponse.next();
@@ -36,4 +37,8 @@ export function middleware(request: NextRequest) {
 
   // export const config = {
   //   matcher: "",
+}
+
+export const config = {
+  matcher: ['/login', '/register', "/"],
 }
