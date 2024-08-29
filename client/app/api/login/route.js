@@ -19,6 +19,7 @@ export const POST = async (request) => {
     await login(data);
     return new NextResponse("Loggin in...", {
       status: 201,
+      user: data,
     });
   }
   return new NextResponse("Username or password is incorrect", {

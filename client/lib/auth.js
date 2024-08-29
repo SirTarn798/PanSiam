@@ -1,6 +1,7 @@
 import { SignJWT, jwtVerify } from "jose";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
+import useUserStore from "./userStore";
 
 const key = new TextEncoder().encode(process.env.SECRET_KEY);
 
@@ -20,6 +21,7 @@ export async function decrypt(input) {
 }
 
 export async function login(data) {
+  //const fetchUserInfo = useUserStore();
 
   const user = data;
 
@@ -28,6 +30,7 @@ export async function login(data) {
 
   // Save the session in a cookie
   cookies().set("session", session, { expires, httpOnly: true });
+  //fetchUserInfo(user);
 }
 
 export async function logout() {
@@ -51,7 +54,6 @@ export async function updateSession(request) {
   const parsed = await decrypt(session);
   parsed.expires = new Date(Date.now() + 10 * 1000);
   const res = NextResponse.next();
-  console.log("xdd");
   res.cookies.set({
     name: "session",
     value: await encrypt(parsed),
